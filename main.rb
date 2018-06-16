@@ -1,26 +1,11 @@
 require 'sinatra'
-require './config'
 
-todos = []
+#Configuration
+require './config/application'
+require './config/routes'
 
-get '/' do
-  @todos = todos
-  erb :index
-end
+#Models
+require './app/models/todo'
 
-get '/todos' do
-  @todos = todos
-  erb :index
-end
-
-get '/todos/create' do
-  erb :create
-end
-
-post '/todos' do
-  todos.push({
-    "title": params[:title],
-    "description": params[:description]
-  })
-  redirect '/todos'
-end
+# Controllers
+require './app/controllers/todo'
