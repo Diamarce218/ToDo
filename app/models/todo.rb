@@ -3,7 +3,7 @@ require 'uuid'
 class Todo
   @@id = UUID.new
   @@todos = [
-    id: @@id.generate,
+    id: 'cd799450-557e-0136-1029-54619d0558d4',
     title: 'Sinatra Rocks',
     description: 'Small but powerful'
   ]
@@ -21,5 +21,11 @@ class Todo
     index = @@todos.index { |item| item[:id] == id }
     @@todos[index]
   end
+#--------------------------------------------------------------------------------------------------
 
+
+  def self.edit (id, attrs)
+    index = @@todos.index { |item| item[:id] == id }
+    @@todos[index].merge!(attrs)
+  end
 end

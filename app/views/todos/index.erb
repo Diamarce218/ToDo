@@ -7,6 +7,12 @@
     <a href="/todos/<%= todo[:id] %>">
       <%= todo[:title] %>
     </a>
+
+
+    <div class="container text-right">
+      <a href="/todos/<%= todo[:id] %>/edit" class="btn btn-primary" role="button">Edit2</a>
+    </div>
+
   </li>
 <% end %>
 </ul>
